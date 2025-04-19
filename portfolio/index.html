@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Professional Developer</title>
+    <meta name="description" content="Professional developer portfolio showcasing skills, projects and experience">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-placeholder {
+            opacity: 0;
+        }
+        
+        img.missing-project + .project-placeholder {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <div class="logo">
+                <a href="index.html" class="hover-scale">Portfolio</a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#journey">Journey</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mode Toggle Button -->
+    <div class="mode-toggle" id="modeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="animated-bg">
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+            <div class="animated-bg__item"></div>
+        </div>
+        <div class="container">
+            <h1 class="fade-in">Hi, I'm <span class="highlight" id="dev-name">Karankumar Rao</span></h1>
+            <h2 class="fade-in delay-1" id="dev-title">Full Stack Developer and Manager</h2>
+            <div class="cta-buttons fade-in delay-2">
+                <a href="#projects" class="btn btn-primary hover-lift">View My Work</a>
+                <a href="#contact" class="btn btn-secondary hover-lift">Contact Me</a>
+                <a href="#journey" class="btn btn-secondary hover-lift">My Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image glow">
+                    <img src="images/profile.jpg" alt="Developer Profile" id="profile-image" class="hover-scale" onerror="this.onerror=null; console.error('Failed to load profile image'); this.src='images/projects/default.jpg';">
+                </div>
+                <div class="about-text">
+                    <p id="about-description">I'm a passionate full-stack developer with over 5 years of experience creating elegant, 
+                        efficient, and user-friendly applications and also a manager at McDonald's. I specialize in modern web technologies and have a keen eye for design, 
+                        allowing me to build solutions that are both beautiful and functional.</p>
+                    <div class="about-details">
+                        <div class="detail-item hover-lift">
+                            <i class="fas fa-envelope pulse"></i>
+                            <span id="email">karankumar@gmail.com</span>
+                        </div>
+                        <div class="detail-item hover-lift">
+                            <i class="fas fa-phone pulse"></i>
+                            <span id="phone">+44 7436679543</span>
+                        </div>
+                        <div class="detail-item hover-lift">
+                            <i class="fas fa-map-marker-alt pulse"></i>
+                            <span id="location">London, UK</span>
+                        </div>
+                        <div class="detail-item hover-lift">
+                            <i class="fas fa-graduation-cap pulse"></i>
+                            <span id="education">BSc (hons) Computer Science</span>
+                        </div>
+                    </div>
+                    <a href="files/resume.pdf" class="btn btn-primary hover-lift glow" id="cv-link" target="_blank">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container" id="skills-container">
+                <!-- Skills will be dynamically loaded from skills.js -->
+                <div class="skill-item" data-skill="html">
+                    <div class="skill-icon">
+                        <img src="images/icons/html.png" alt="HTML Icon">
+                    </div>
+                    <h3>HTML</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="CSS">
+                    <div class="skill-icon">
+                        <img src="images/icons/text.png" alt="CSS Icon">
+                    </div>
+                    <h3>CSS</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="python">
+                    <div class="skill-icon">
+                        <img src="images/icons/python.png" alt="Python Icon">
+                    </div>
+                    <h3>Python</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="web design">
+                    <div class="skill-icon">
+                        <img src="images/icons/web-design.png" alt="Web Design Icon">
+                    </div>
+                    <h3>Web Design</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="javascript">
+                    <div class="skill-icon">
+                        <img src="images/icons/js-file.png" alt="Python Icon">
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="data analysis">
+                    <div class="skill-icon">
+                        <img src="images/icons/exploration.png" alt="Data Analysis Icon">
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="react">
+                    <div class="skill-icon">
+                        <img src="images/icons/science.png" alt="React Icon">
+                    </div>
+                    <h3>React</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item" data-skill="android studio">
+                    <div class="skill-icon">
+                        <img src="images/icons/android.png" alt="Android Icon">
+                    </div>
+                    <h3>Android Studio</h3>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%;" data-width="95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-filter">
+                <button class="filter-btn active hover-lift" data-filter="all">All</button>
+                <button class="filter-btn hover-lift" data-filter="web">Web Development</button>
+                <button class="filter-btn hover-lift" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn hover-lift" data-filter="design">UI/UX Design</button>
+                <button class="filter-btn hover-lift" data-filter="data">Data Analysis (Research Report)</button>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be dynamically loaded from projects.js -->
+                <div class="project-item" data-category="web" data-skills="html,css">
+                    <div class="project-image">
+                        <img src="images/projects/ecommerce/Home1.png" alt="E-commerce Website" 
+                             onerror="this.onerror=null; this.src='images/projects/default.jpg'; this.classList.add('missing-project');">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>E-commerce Project</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                        <p>A full-featured online store with payment integration (UX/UI)</p>
+                        <a href="#" class="project-link hover-lift">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="web" data-skills="html,css,UX/UI">
+                    <div class="project-image">
+                        <img src="images/projects/website/Home.png" alt="E-commerce Website" 
+                             onerror="this.onerror=null; this.src='images/projects/default.jpg'; this.classList.add('missing-project');">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>E-commerce Project</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-info">
+                        <h3>E-commerce Platform</h3>
+                            <p>A full-featured online store with payment integration (UX/UI)</p>
+                        <a href="#" class="project-link hover-lift">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="mobile" data-skills="java,android,UX/UI">
+                    <div class="project-image">
+                        <img src="images/projects/mobile app/landpage.png" alt="IRCTC App" 
+                             onerror="this.onerror=null; this.src='images/projects/default.jpg'; this.classList.add('missing-project');">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Application</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>IRCTC App</h3>
+                        <p>Mobile application for booking train tickets and checking train status</p>
+                        <a href="#" class="project-link hover-lift">View Project</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="design" data-skills="design">
+                    <div class="project-image">
+                        <img src="images/projects/research report/AI in Healthcare.png" alt="Dashboard Design" 
+                             onerror="this.onerror=null; this.src='images/projects/default.jpg'; this.classList.add('missing-project');">
+                        <div class="project-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Poster Design</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Analytics Poster Design</h3>
+                        <p>Clean and intuitive poster design</p>
+                        <a href="#" class="project-link hover-lift">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Journey Section -->
+    <section id="journey" class="journey">
+        <div class="container">
+            <h2 class="section-title">My Journey</h2>
+            <div class="journey-content">
+                <div class="journey-image glow">
+                    <img src="images/schoolphoto.jpg" alt="Developer Profile" id="school-image" class="hover-scale" onerror="this.onerror=null; console.error('Failed to load profile image'); this.src='images/projects/default.jpg';">
+                </div>
+                <div class="school-image">
+                    <h2>High School</h2>
+                    <h3>Sabari Vidya Peedom</h3>
+                    <p id="about-description">I completed my high school education at Sabari Vidya Peedom, a school known for its focus on both academic excellence and holistic development. 
+                        During my time there, I gained invaluable lessons not only in the classroom but also through extracurricular activities like sports, arts, and community service. 
+                        The school's emphasis on discipline, critical thinking, and teamwork helped shape my work ethic and problem-solving skills. 
+                        Above all, Sabari Vidya Peedom instilled in me a sense of responsibility and empathy, values that continue to guide me in all my pursuits.</p>
+                </div>
+            </div>
+            <br>    
+            <br>
+            <br>
+                <div class="journey-content">
+                    <div class="journey-image glow">
+                        <img src="images/richmond.jpg" alt="Developer Profile" id="richmond-image" class="hover-scale" onerror="this.onerror=null; console.error('Failed to load profile image'); this.src='images/projects/default.jpg';">
+                    </div>
+                    <div class="richmond-image">
+                        <h2>University</h2>
+                        <h3>Richmond the American University in London</h3>
+                        <p id="about-description">I am computer science student at Richmond University, London, with a strong foundation in petroleum engineering 
+                            from PDEU University in India. Over the years, I have developed a diverse range of technical skills, including 
+                            expertise in HTML, CSS, Java, Python, SQL, and web development, while also cultivating a passion for UX/UI 
+                            design—enabling me to create intuitive, user-focused interfaces. My experience working as a Shift Manager at 
+                            McDonald's enhanced my management and leadership abilities, allowing me to thrive in team-oriented environments. 
+                            Beyond my professional pursuits, I remain dedicated to community service through my volunteer work at The Trussell 
+                            Trust, where I support people facing hunger and poverty.</p>
+                </div>
+            </div>
+       
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item hover-lift">
+                        <i class="fas fa-envelope pulse"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p id="contact-email">karankumar11@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item hover-lift">
+                        <i class="fas fa-phone pulse"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p id="contact-phone">+44 7436679543</p>
+                        </div>
+                    </div>
+                    <div class="contact-item hover-lift">
+                        <i class="fas fa-map-marker-alt pulse"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p id="contact-location">London, UK</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/karan-rao-51106632b" id="linkedin-link" target="_blank" rel="noopener noreferrer" class="hover-rotate glow"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Karannn1103" id="github-link" target="_blank" rel="noopener noreferrer" class="hover-rotate glow"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/karankumar99935" id="twitter-link" target="_blank" rel="noopener noreferrer" class="hover-rotate glow"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/its_karan.nn" id="instagram-link" target="_blank" rel="noopener noreferrer" class="hover-rotate glow"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="hover-lift">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required class="hover-lift">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required class="hover-lift">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required class="hover-lift"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary hover-lift glow">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year">2025</span> <span id="footer-name">Karankumar Rao</span>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/darkmode.js"></script>
+    <script src="js/contact.js"></script>
+    
+    <!-- Ensure social links work properly -->
+    <script>
+        // Backup script to ensure social links work
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set direct links as a fallback
+            const socialLinks = {
+                'linkedin-link': 'https://www.linkedin.com/in/karan-rao-51106632b',
+                'github-link': 'https://github.com/Karannn1103',
+                'twitter-link': 'https://twitter.com/karankumar99935',
+                'instagram-link': 'https://instagram.com/its_karan.nn'
+            };
+            
+            // Apply links directly
+            Object.keys(socialLinks).forEach(id => {
+                const link = document.getElementById(id);
+                if (link) {
+                    link.href = socialLinks[id];
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,360 @@
+/* Colorful Journey link */
+.gradient-text {
+    background: linear-gradient(135deg, #ff7b29, #ff2975);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    font-weight: bold;
+    position: relative;
+}
+
+.gradient-text:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(135deg, #ff7b29, #ff2975);
+}
+
+/* Public Timeline Styles */
+.journey-page {
+    padding: 120px 0 80px;
+    background-color: var(--background-color);
+}
+
+/* Ensure proper header spacing */
+#header .nav-links a {
+    margin: 0 10px;
+}
+
+#header .logo {
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    #header .nav-links {
+        padding: 20px;
+    }
+    
+    #header .nav-links a {
+        margin: 5px 0;
+    }
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: var(--accent-color);
+    bottom: -10px;
+    left: 25%;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Timeline Container */
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 5px;
+}
+
+/* Loading Animation */
+.loading {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--text-color);
+}
+
+.loading i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.loading p {
+    font-size: 18px;
+}
+
+/* Empty Timeline State */
+.timeline-empty {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--text-color);
+}
+
+.timeline-empty i {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: var(--border-color);
+    opacity: 0.6;
+}
+
+.timeline-empty h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+.timeline-empty p {
+    font-size: 16px;
+    max-width: 300px;
+    margin: 0 auto;
+    color: var(--text-color);
+}
+
+/* Timeline Post */
+.timeline-post {
+    position: relative;
+    width: 50%;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-post:nth-child(odd) {
+    left: 0;
+    padding-right: 40px;
+}
+
+.timeline-post:nth-child(even) {
+    left: 50%;
+    padding-left: 40px;
+}
+
+.timeline-post-content {
+    padding: 25px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-post-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Timeline Dots */
+.timeline-post:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border: 4px solid var(--primary-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-post:nth-child(odd):after {
+    right: -10px;
+}
+
+.timeline-post:nth-child(even):after {
+    left: -10px;
+}
+
+/* Arrow Pointers */
+.timeline-post-content:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    top: 15px;
+}
+
+.timeline-post:nth-child(odd) .timeline-post-content:before {
+    right: -15px;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent var(--card-bg);
+}
+
+.timeline-post:nth-child(even) .timeline-post-content:before {
+    left: -15px;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent var(--card-bg) transparent transparent;
+}
+
+/* Timeline Post Content Styles */
+.timeline-post-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+.timeline-post-title {
+    font-size: 22px;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.timeline-post-date {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-post-date i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.timeline-post-category {
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.timeline-post-description {
+    font-size: 16px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.timeline-post-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-post-link i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-post-link:hover {
+    text-decoration: underline;
+}
+
+.timeline-post-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Category Colors */
+.timeline-post-category.achievement {
+    background-color: rgba(76, 217, 100, 0.1);
+    color: #4cd964;
+}
+
+.timeline-post-category.learning {
+    background-color: rgba(0, 113, 227, 0.1);
+    color: #0071e3;
+}
+
+.timeline-post-category.project {
+    background-color: rgba(255, 149, 0, 0.1);
+    color: #ff9500;
+}
+
+.timeline-post-category.certification {
+    background-color: rgba(157, 95, 255, 0.1);
+    color: #9d5fff;
+}
+
+/* Back Button */
+.timeline-back {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Loading Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading i {
+    animation: spin 1.5s linear infinite;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .timeline-container::before {
+        left: 40px;
+    }
+
+    .timeline-post {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 0;
+    }
+
+    .timeline-post:nth-child(odd) {
+        left: 0;
+        padding-right: 0;
+    }
+
+    .timeline-post:nth-child(even) {
+        left: 0;
+        padding-left: 80px;
+    }
+
+    .timeline-post:after {
+        left: 29px !important;
+        right: auto !important;
+    }
+
+    .timeline-post-content:before {
+        left: -15px !important;
+        right: auto !important;
+        border-width: 15px 15px 15px 0 !important;
+        border-color: transparent var(--card-bg) transparent transparent !important;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+    }
+} 

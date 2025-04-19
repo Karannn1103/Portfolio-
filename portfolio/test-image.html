@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .image-container {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Test Page</h1>
+    
+    <h2>Profile Image Test</h2>
+    <div class="image-container">
+        <p>Direct path: images/profile.jpg</p>
+        <img src="images/profile.jpg" alt="Profile Image" onerror="this.onerror=null; this.after('❌ Failed to load image'); this.style.display='none';">
+    </div>
+    
+    <h2>E-commerce Image Test</h2>
+    <div class="image-container">
+        <p>Direct path: images/projects/ecommerce/Home.png</p>
+        <img src="images/projects/ecommerce/Home.png" alt="E-commerce Image" onerror="this.onerror=null; this.after('❌ Failed to load image'); this.style.display='none';">
+    </div>
+    
+    <h2>Default Image Test</h2>
+    <div class="image-container">
+        <p>Direct path: images/projects/default.jpg</p>
+        <img src="images/projects/default.jpg" alt="Default Image" onerror="this.onerror=null; this.after('❌ Failed to load image'); this.style.display='none';">
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.after('✅ Image loaded successfully');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

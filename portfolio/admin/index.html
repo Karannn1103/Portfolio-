@@ -1,0 +1,196 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Portfolio</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h2>Admin Panel</h2>
+                <button class="admin-sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <nav>
+                <a href="#" class="admin-nav-item active" data-target="timeline">
+                    <i class="fas fa-history"></i>
+                    Timeline
+                </a>
+                <a href="#" class="admin-nav-item" data-target="profile">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+                <a href="#" class="admin-nav-item" data-target="settings">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+                <a href="#" class="admin-nav-item" onclick="handleLogout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="admin-main">
+            <!-- Header Bar -->
+            <div class="admin-header-bar">
+                <div class="admin-user">
+                    <img src="https://via.placeholder.com/40" alt="Admin" id="headerProfileImage">
+                    <div class="admin-user-info">
+                        <h3 id="headerUserName">Admin</h3>
+                        <p id="headerUserTitle">Administrator</p>
+                    </div>
+                </div>
+                <div class="admin-toggle-mobile">
+                    <button class="admin-sidebar-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Timeline Section -->
+            <div id="timeline" class="admin-section">
+                <div class="admin-content">
+                    <div class="admin-content-header">
+                        <h2>Timeline Posts</h2>
+                        <button class="add-post-btn" onclick="showModal()">
+                            <i class="fas fa-plus"></i>
+                            Add New Post
+                        </button>
+                    </div>
+                    <div class="admin-card-grid" id="timelinePosts">
+                        <!-- Timeline posts will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="profile" class="admin-section" style="display: none;">
+                <div class="admin-content">
+                    <div class="admin-content-header">
+                        <h2>Profile Settings</h2>
+                    </div>
+                    <form class="admin-form">
+                        <div class="admin-form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="title">Professional Title</label>
+                            <input type="text" id="title" name="title" placeholder="e.g. Web Developer" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="bio">Bio</label>
+                            <textarea id="bio" name="bio" placeholder="Write a short bio about yourself" required></textarea>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="profileImage">Profile Image</label>
+                            <div class="admin-file-upload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload profile image</p>
+                            </div>
+                            <img id="profileImagePreview" class="admin-preview-image" alt="Profile Preview">
+                        </div>
+                        <button type="submit" class="admin-btn">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings" class="admin-section" style="display: none;">
+                <div class="admin-content">
+                    <div class="admin-content-header">
+                        <h2>Admin Settings</h2>
+                    </div>
+                    <form class="admin-form">
+                        <div class="admin-form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" value="admin" disabled required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="currentPassword">Current Password</label>
+                            <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="newPassword">New Password</label>
+                            <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required>
+                        </div>
+                        <div class="admin-form-group">
+                            <label for="confirmPassword">Confirm New Password</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm new password" required>
+                        </div>
+                        <button type="submit" class="admin-btn">Update Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Post Modal -->
+    <div class="admin-modal">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3>Add New Post</h3>
+                <button class="admin-modal-close" onclick="hideModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="admin-modal-body">
+                <form id="postForm" class="admin-form">
+                    <div class="admin-form-group">
+                        <label for="postTitle">Title</label>
+                        <input type="text" id="postTitle" name="title" placeholder="Post title" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postDate">Date</label>
+                        <input type="date" id="postDate" name="date" required>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postCategory">Category</label>
+                        <select id="postCategory" name="category" required>
+                            <option value="achievement">Achievement</option>
+                            <option value="learning">Learning</option>
+                            <option value="project">Project</option>
+                            <option value="certification">Certification</option>
+                        </select>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postDescription">Description</label>
+                        <textarea id="postDescription" name="description" placeholder="Post description" required></textarea>
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postImage">Image (Optional)</label>
+                        <div class="admin-file-upload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Click to upload image</p>
+                        </div>
+                        <img id="postImagePreview" class="admin-preview-image" alt="Post Preview">
+                    </div>
+                    <div class="admin-form-group">
+                        <label for="postLink">Link (Optional)</label>
+                        <input type="url" id="postLink" name="link" placeholder="https://example.com">
+                    </div>
+                    <button type="submit" class="admin-btn">Save Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html> 
+--> 

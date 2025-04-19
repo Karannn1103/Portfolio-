@@ -1,0 +1,152 @@
+{
+    "personal": {
+        "name": "Karankumar Rao",
+        "title": "Full Stack Developer and a part time Manager",
+        "email": "karankumar@gmail.com",
+        "phone": "+44 7436679543",
+        "location": "London, UK",
+        "education": "BSc (hons) Computer Science",
+        "about": "I'm a passionate full-stack developer with over 5 years of experience creating elegant, efficient, and user-friendly applications and also a manager at McDonald's. I specialize in modern web technologies and have a keen eye for design, allowing me to build solutions that are both beautiful and functional.",
+        "social": {
+            "linkedin": "https://linkedin.com/in/karan-rao-51106632b",
+            "github": "https://github.com/Karannn1103",
+            "twitter": "https://twitter.com/karankumar99935",
+            "instagram": "https://instagram.com/its_karan.nn"
+        }
+    },
+    
+    "skills": [
+        {
+            "name": "HTML",
+            "level": 90,
+            "image": "images/icons/html.png"
+        },
+        {
+            "name": "CSS",
+            "level": 85,
+            "image": "images/icons/text.png"
+            
+        },
+        {
+            "name": "JavaScript",
+            "level": 80,
+            "image": "images/icons/js-file.png"
+            
+        },
+        {
+            "name": "React",
+            "level": 75,
+            "image": "images/icons/science.png"
+            
+        },
+        {
+            "name": "Python",
+            "level": 75,
+            "image": "images/icons/python.png"
+            
+        },
+        {
+            "name": "Web Development",
+            "level": 70,
+            "image": "images/icons/web-design.png"
+            
+        },
+        {
+            "name": "Data Analysis",
+            "level": 70,
+            "image": "images/icons/exploration.png"
+            
+        },
+        {
+            "name": "Android Studio",
+            "level": 70,
+            "image": "images/icons/android.png"
+            
+        }
+    ],
+    "projects": [
+        {
+            "title": "E-commerce Platform",
+            "description": "A full-featured e-commerce platform with payment processing and inventory management.",
+            "image": "images/projects/ecommerce/Home1.png",
+            "gallery": [
+                "images/projects/ecommerce/Home1.png",
+                "images/projects/ecommerce/Home2.png",
+                "images/projects/ecommerce/Home3.png",
+                "images/projects/ecommerce/product.png",
+                "images/projects/ecommerce/product2.png",
+                "images/projects/ecommerce/side_cart.png",
+                "images/projects/ecommerce/login_page.png"
+            ],
+            "url": "https://example.com/ecommerce",
+            "github": "https://github.com/Karannn1103",
+            "category": "Web Development",
+            "skills": ["HTML","CSS","JavaScript", "React"],
+            "technologies": ["React", "Node.js", "Express", "MongoDB", "Stripe", "AWS"],
+            "features": [
+                "User authentication",
+                "Product search and filtering",
+                "Shopping cart and wishlist",
+                "Admin dashboard"
+            ]
+        },
+        {
+            "title": "Personal Website",
+            "description": "A responsive personal website showcasing portfolio and skills.",
+            "image": "images/projects/website/Home.png",
+            "gallery": [
+                "images/projects/website/Home.png",
+                "images/projects/website/Home1.png",
+                "images/projects/website/Home2.png",
+                "images/projects/website/about.png",
+                "images/projects/website/menu.png",
+                "images/projects/website/login.png",
+                "images/projects/website/cart.png",
+                "images/projects/website/wishlist.png"
+            ],
+            "url": "https://example.com/website",
+            "github": "https://github.com/Karannn1103",
+            "category": "Web Development",
+            "skills": ["HTML", "CSS", "JavaScript"],
+            "technologies": ["HTML5", "CSS3", "JavaScript"],
+            "features": [
+                "Responsive design",
+                "Smooth animations",
+                "Interactive elements"
+            ]
+        },
+        {
+            "title": "IRCTC Mobile App",
+            "description": "A mobile application for booking train tickets and checking train status.",
+            "image": "images/projects/mobile app/landpage.png",
+            "gallery": [
+                "images/projects/mobile app/landpage.png",
+                "images/projects/mobile app/home.png",
+                "images/projects/mobile app/login.png",
+                "images/projects/mobile app/menu.png",
+                "images/projects/mobile app/journay.png",
+                "images/projects/mobile app/wallet.png"
+            ],
+            "url": "https://example.com/mobile-app",
+            "github": "https://github.com/Karannn1103",
+            "category": "Mobile App Development",
+            "skills": ["Java", "Android", "UX/UI"],
+            "technologies": ["Android Studio", "Java", "Firebase", "Google Maps API"]
+        },
+        {
+            "title": "Research Reports",
+            "description": "Data analysis and research reports on various topics including AI in healthcare and business technology.",
+            "image": "images/projects/research report/AI in Healthcare.png",
+            "gallery": [
+                "images/projects/research report/AI in Healthcare.png",
+                "images/projects/research report/PTC Inc.png",
+                "images/projects/research report/LWT.png"
+            ],
+            "url": "https://example.com/research",
+            "github": "https://github.com/Karannn1103/research",
+            "category": "Data Analysis and Research Posters",
+            "skills": ["Data Analysis", "Research", "Python"],
+            "technologies": ["Matplotlib", "Statistical Analysis"]
+        }
+    ]
+}  
